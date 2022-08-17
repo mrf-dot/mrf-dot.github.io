@@ -2,12 +2,12 @@ html {
 	max-width: 1500px;
 	overflow-x: hidden;
 	margin: auto;
-	background-color: black;
 }
 
 body {
+	background-color: black;
 	color: lime;
-	font-family: consolas;
+	font-family: consolas, sans-serif;
 	font-size: 12pt;
 }
 
