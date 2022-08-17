@@ -6,9 +6,7 @@ Mitch Feigenbaum
 .SH
 Contact Info
 .LP
-Address				9714 Rolling Ridge Dr. Fairfax Station, Va, 22039
-.LP
-Telephone				571-623-4086
+Discord				mrf-dot#0922
 .LP
 Email					mfeigenbaum23@gmail.com
 .LP
@@ -27,6 +25,16 @@ Score				1410
 Math			660
 .IP
 Reading		750
+.SH
+Honors
+.LP
+National Junior Honor Society	2018
+.LP
+National Honor Society		2021
+.LP
+NLE Magna Cum Laude		2021
+.LP
+AP Scholar with Honor Award	2022
 .SH
 Job Experience
 .LP
@@ -61,6 +69,8 @@ SSH
 Scouting
 .LP
 Earned more than 1,000 service hours working on various service projects
+.LP
+Earned the Triple Crown for completing adventures at Philmont, Seabase, and Summit
 .LP
 Volunteered at a Cub Scout day camp
 .LP
