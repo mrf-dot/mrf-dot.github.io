@@ -1,5 +1,4 @@
 .so format.ms
-.nr PS 11.5p
 .TL
 R\['e]sum\['e]
 .AU
@@ -20,6 +19,14 @@ Website				https://mrf-dot.github.io
 Education
 .LP
 Lake Braddock			2016\*-2023
+.SH
+SAT
+.LP
+Score				1410
+.IP
+Math			660
+.IP
+Reading		750
 .SH
 Job Experience
 .LP
