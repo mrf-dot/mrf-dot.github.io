@@ -1,0 +1,106 @@
+html {
+	max-width: 1500px;
+	overflow-x: hidden;
+	margin: auto;
+	background-color: black;
+}
+
+body {
+	color: lime;
+	font-family: consolas;
+	font-size: 12pt;
+}
+
+hr {
+	color: green
+}
+
+.footer {
+	position: fixed;
+	width: 100%;
+	text-align: justify-all;
+	margin-left: 120px;
+	/* Same width as sidenav */
+}
+
+a:link,
+a:visited {
+	color: white;
+}
+
+a:hover {
+	transition: .3s;
+	color: grey;
+}
+
+a:active {
+	transition: 0s;
+	color: green;
+}
+
+.nav {
+	z-index: 1;
+	top: 0;
+	left: 0;
+	font-family: consolas;
+	font-size: 17px;
+}
+
+figcaption {
+	text-align: center;
+}
+
+audio {
+	width: 100%;
+}
+
+blockquote {
+	border-left: 5px solid green;
+	padding: 0.5em 5px;
+	background-color: #231E1E;
+	overflow-x: wrap;
+}
+
+.box {
+	outline: 1px green;
+}
+
+code {
+	padding: 0px;
+	background-color: lightgray;
+	color: black;
+	font-size: 88%;
+	font-family: 'Source Code Pro';
+	border-radius: 2px;
+	border-color: black;
+	border-width: 1px;
+}
+
+img {
+	width: 20%;
+	height: 30%;
+	display:block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+video {
+	width: 50%;
+	height: 50%;
+	display:block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+h1 {
+	text-align: center;
+}
+
+.SpanButton {
+	margin: 0 auto;
+	outline: 1px solid lime;
+	text-align: justify;
+	cursor: pointer;
+	font-size: 20px;
+	display: block;
+}
