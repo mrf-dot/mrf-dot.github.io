@@ -1,3 +1,4 @@
+const spaces = 5;
 const pages = {
 	Home: "index",
 	Resume: "resume",
@@ -5,7 +6,7 @@ const pages = {
 };
 document.writeln('<div class="nav"> <p><strong>Navigation</strong>');
 Object.keys(pages).forEach(function(page) {
-	for (var i = 0; i < 3; i++)
+	for (var i = 0; i < spaces; i++)
 		document.write('&nbsp;');
 	document.writeln('<a href="/' + pages[page] + '.html">' + page + '</a> |');
 })
