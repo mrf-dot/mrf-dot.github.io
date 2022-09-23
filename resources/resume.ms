@@ -6,39 +6,40 @@ Mitch Feigenbaum
 .SH
 Contact Info
 .LP
-Discord				mrf-dot#0922
+Email				mfeigenbaum23@gmail.com
 .LP
-Email					mfeigenbaum23@gmail.com
+Github			https://github.com/mrf-dot
 .LP
-Github				https://github.com/mrf-dot
+Website			https://mrf-dot.github.io
 .LP
-Website				https://mrf-dot.github.io
+YouTube			https://www.youtube.com/channel/UCdJoCFI6t7DTzms9Cr3U0hQ
 .SH
 Education
 .LP
-Lake Braddock			2016\*-2023
+2016\*-2023		Lake Braddock
 .SH
 SAT
 .LP
-Score				1410
-.IP
-Math			660
-.IP
-Reading		750
+.LP
+Math				660
+.LP
+Reading			750
+.LP
+Total				1410
 .SH
 Honors
 .LP
-National Junior Honor Society	2018
+2018				National Junior Honor Society
 .LP
-National Honor Society		2021
+2021				National Honor Society
 .LP
-NLE Magna Cum Laude		2021
+2021				National Latin Exam Magna Cum Laude
 .LP
-AP Scholar with Honor Award	2022
+2022				AP Scholar with Honor Award
 .SH
 Job Experience
 .LP
-Northern Virgina Scout Shop	2022\*-Current
+2022\*-Current		Northern Virgina Scout Shop
 .SH
 Programming Experience
 .LP
