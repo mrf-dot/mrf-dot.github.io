@@ -69,7 +69,7 @@ SSH
 .SH
 Scouting
 .LP
-Earned more than 1,000 service hours working on various service projects
+Earned more than 500 service hours working on various service projects
 .LP
 Earned the Triple Crown for completing adventures at Philmont, Seabase, and Summit
 .LP
