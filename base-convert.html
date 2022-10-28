@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<!-- add slashes to beginning of file names -->
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="description" content="">
+	<meta name="keywords" content="">
+	<meta name="author" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Base Converter</title>
+	<link rel="stylesheet" type="text/css" href="/css/hacker.css" media="screen" />
+</head>
+
+<body>
+	<script src="/script/nav.js"></script>
+	<script src="/script/basechange.js"></script>
+	<h1>Base Converter</h1>
+	<blockquote>
+
+		<table>
+			<tr>
+				<td>
+					<select id="base" onchange="bchange()">
+						<option value="2">Binary (2)</option>
+						<option value="8">Octal (8)</option>
+						<option value="10" selected>Decimal (10)</option>
+						<option value="16">Hexadecimal (16)</option>
+						<option value="32">Base32 (32)</option>
+						<option value="custom">Custom</option>
+					</select>
+					<select id="custom" onchange="bchange()" hidden>
+						<option value="2">2</option>
+						<option value="3">3</option>
+						<option value="4">4</option>
+						<option value="5">5</option>
+						<option value="6">6</option>
+						<option value="7">7</option>
+						<option value="8">8</option>
+						<option value="9">9</option>
+						<option value="10">10</option>
+						<option value="11">11</option>
+						<option value="12">12</option>
+						<option value="13">13</option>
+						<option value="14">14</option>
+						<option value="15">15</option>
+						<option value="16">16</option>
+						<option value="17">17</option>
+						<option value="18">18</option>
+						<option value="19">19</option>
+						<option value="20">20</option>
+						<option value="21">21</option>
+						<option value="22">22</option>
+						<option value="23">23</option>
+						<option value="24">24</option>
+						<option value="25">25</option>
+						<option value="26">26</option>
+						<option value="27">27</option>
+						<option value="28">28</option>
+						<option value="29">29</option>
+						<option value="30">30</option>
+						<option value="31">31</option>
+						<option value="32">32</option>
+					</select>
+				</td>
+				<td>
+					<input type="text" spellcheck="false" id="rawNum" placeholder="Enter a number"
+						oninput="vchange()">
+				</td>
+			</tr>
+			<tr>
+				<th scope="col">Base</th>
+				<th scope="col">Value</th>
+			</tr>
+			<tr>
+				<td>Binary</td>
+				<td><input id="bin" value="0" readonly></td>
+				<td><button onclick="copyNumber('bin')">COPY</button></td>
+			</tr>
+			<tr>
+				<td>Octal</td>
+				<td><input id="octal" value="0" readonly></td>
+				<td><button onclick="copyNumber('octal')">COPY</button></td>
+			</tr>
+			<tr>
+				<td>Decimal</td>
+				<td><input id="decimal" value="0" readonly></td>
+				<td><button onclick="copyNumber('decimal')">COPY</button></td>
+			</tr>
+			<tr>
+				<td>Hexadecimal</td>
+				<td><input id="hex" value="0" readonly></td>
+				<td><button onclick="copyNumber('hex')">COPY</button></td>
+			</tr>
+			</tr>
+			<tr>
+				<td>Base32</td>
+				<td><input id="base32" value="0" readonly></td>
+				<td><button onclick="copyNumber('base32')">COPY</button></td>
+			</tr>
+			<tr>
+				<td>Base
+					<select id="selectBase" onchange="cbchange()">
+						<option value="2">2</option>
+						<option value="3">3</option>
+						<option value="4">4</option>
+						<option value="5">5</option>
+						<option value="6">6</option>
+						<option value="7">7</option>
+						<option value="8">8</option>
+						<option value="9">9</option>
+						<option value="10">10</option>
+						<option value="11">11</option>
+						<option value="12">12</option>
+						<option value="13">13</option>
+						<option value="14">14</option>
+						<option value="15">15</option>
+						<option value="16">16</option>
+						<option value="17">17</option>
+						<option value="18">18</option>
+						<option value="19">19</option>
+						<option value="20">20</option>
+						<option value="21">21</option>
+						<option value="22">22</option>
+						<option value="23">23</option>
+						<option value="24">24</option>
+						<option value="25">25</option>
+						<option value="26">26</option>
+						<option value="27">27</option>
+						<option value="28">28</option>
+						<option value="29">29</option>
+						<option value="30">30</option>
+						<option value="31">31</option>
+						<option value="32">32</option>
+					</select>
+				</td>
+				<td><input id="cbase" value="0" readonly></td>
+				<td><button onclick="copyNumber('cbase')">COPY</button></td>
+			</tr>
+			<!-- Todo: add way to add bases to the table -->
+		</table>
+</body>
+
+</html>

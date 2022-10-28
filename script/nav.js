@@ -2,7 +2,8 @@ const SPACES = 5;
 const PAGES = {
 	Home: "index",
 	Resume: "resume",
-	Projects: "repos"
+	Projects: "repos",
+	"Base Converter": "base-convert"
 };
 document.writeln('<div class="nav"> <p><strong>Navigation</strong>');
 Object.keys(PAGES).forEach(function(page) {
