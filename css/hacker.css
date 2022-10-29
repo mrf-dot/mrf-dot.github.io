@@ -2,25 +2,14 @@ html {
 	max-width: 1500px;
 	overflow-x: hidden;
 	margin: auto;
-}
-
-body {
-	background-color: black;
 	color: lime;
 	font-family: consolas, sans-serif;
-	font-size: 12pt;
+	background-color: black;
 }
+
 
 hr {
 	color: green
-}
-
-.footer {
-	position: fixed;
-	width: 100%;
-	text-align: justify-all;
-	margin-left: 120px;
-	/* Same width as sidenav */
 }
 
 a:link,
@@ -39,14 +28,34 @@ a:active {
 }
 
 .nav {
-	z-index: 1;
+	overflow: hidden;
+	background-color: #202020;
+	position: fixed;
 	top: 0;
 	left: 0;
-	font-size: 17px;
+	width: 100%;
+	font-size: 14pt;
+}
+.nav a {
+	float: left;
+	display: block;
+	text-align: center;
+	padding: 8px 10px;
+	text-decoration: none;
+}
+
+.container {
+	background-color: black;
+	color: lime;
+	font-family: consolas, sans-serif;
+	font-size: 14pt;
+	margin-top: 45px;
+	height: 2000px;
 }
 
 figcaption {
 	text-align: center;
+	font-size: 88%;
 }
 
 audio {
@@ -58,10 +67,6 @@ blockquote {
 	padding: 0.5em 5px;
 	background-color: #231E1E;
 	overflow-x: wrap;
-}
-
-.box {
-	outline: 1px green;
 }
 
 code {
@@ -76,9 +81,8 @@ code {
 }
 
 img {
-	width: 20%;
-	height: 30%;
-	display:block;
+	height: 50vh;
+	display: block;
 	margin-left: auto;
 	margin-right: auto;
 }
@@ -91,7 +95,7 @@ video {
 	margin-right: auto;
 }
 
-h1, h2 {
+h1 {
 	text-align: center;
 }
 
