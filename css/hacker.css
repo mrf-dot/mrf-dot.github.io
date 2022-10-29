@@ -50,7 +50,7 @@ a:active {
 	font-family: consolas, sans-serif;
 	font-size: 14pt;
 	margin-top: 45px;
-	height: 2000px;
+	/* height: 2000px; */
 }
 
 figcaption {
@@ -103,11 +103,11 @@ input {
 	resize: none;
 	background-color: lightgrey;
 	color: black;
-	font-size: 18px;
+	font-size: 14pt;
 	display: center;
 	margin-left: auto;
 	margin-right: auto;
-	width:400px;
+	width: 250px;
 }
 
 select {
@@ -142,4 +142,15 @@ button {
 	cursor: pointer;
 	font-size: 16px;
 	display: block;
+}
+
+button:hover {
+	outline: 1px solid red;
+}
+
+button:active {
+	transition: 0s;
+	color: red;
+	outline: 1px solid darkred;
+	background-color: lightgrey;
 }
