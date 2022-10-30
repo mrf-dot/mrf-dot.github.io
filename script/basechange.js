@@ -36,7 +36,3 @@ function fillBases() {
 		document.getElementById(b).value = parseInt(val, base).toString(bases[b]);
 	});
 }
-
-function copyNumber(id) {
-	navigator.clipboard.writeText(document.getElementById(id).value);
-}
