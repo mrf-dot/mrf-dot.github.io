@@ -11,7 +11,7 @@ function interest() {
 	}
 	// simple
 	else if (n == 0) {
-		a = p * r * t;
+		a = p + p * r * t;
 	}
 	// compound
 	else {
