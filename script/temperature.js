@@ -6,7 +6,7 @@ function fromF() {
 	if (tval == 32)
 		tval = 0;
 	else
-		tval = ((tval - 32) / 1.8);
+		tval = (tval - 32) / 1.8;
 }
 
 function fromK() {
