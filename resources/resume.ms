@@ -6,46 +6,77 @@ Mitch Feigenbaum
 .SH
 Contact Info
 .LP
-Email				mfeigenbaum23@gmail.com
-.LP
-Github			https://github.com/mrf-dot
-.LP
-Website			https://mrf-dot.github.io
-.LP
-YouTube			https://www.youtube.com/channel/UCdJoCFI6t7DTzms9Cr3U0hQ
+.TS
+expand;
+l l.
+Email	mfeigenbaum23@gmail.com
+Github	https://github.com/mrf-dot
+Website	https://mrf-dot.github.io
+YouTube	https://www.youtube.com/channel/UCdJoCFI6t7DTzms9Cr3U0hQ
+.TE
 .SH
 Education
 .LP
-2016\*-2023		Lake Braddock
+.TS
+expand;
+l l l.
+2017\*-2023	Lake Braddock Secondary School	Cumulative GPA: 4.01
+.TE
 .SH
 SAT
 .LP
+.TS H
+doublebox;
+cB cB.
+Section	Score
+.TH
+.T&
+l c.
+Math	660
+EBRW	750
+Total	1410
+.TE
+.SH
+Advanced Placement Courses
 .LP
-Math				660
-.LP
-Reading			750
-.LP
-Total				1410
+.TS H
+doublebox;
+cB cB cB.
+Title	Year	Exam Score
+.TH
+.T&
+l c c.
+Computer Science A	2022	5
+Computer Science Principles	2021	4
+US History	2022	4
+World History Modern	2021	4
+.TE
 .SH
 Honors
 .LP
-2018				National Junior Honor Society
-.LP
-2021				National Honor Society
-.LP
-2021				National Latin Exam Magna Cum Laude
-.LP
-2022				AP Scholar with Honor Award
+.TS
+expand;
+l r.
+2018	National Junior Honor Society
+2019	National Latin Exam Magna Cum Laude
+2021	National Honor Society
+2022	AP Scholar with Honor Award
+.TE
 .SH
 Job Experience
 .LP
-2022\*-Current		Northern Virgina Scout Shop
+.TS
+expand;
+l r.
+2022\*-Current	Northern Virgina Scout Shop
+.TE
 .SH
 Programming Experience
-.LP
+.BU
 Microsoft Technology Associate (MTA) certification in Python and Java
-.LP
+.BU
 Experience in many programming languages
+.RS
 .BU
 HTML/CSS/JavaScript
 .BU
@@ -58,21 +89,24 @@ C#
 C
 .BU
 PowerShell/Bash/Shell script
-.LP
+.RE
+.BU
 Experience working with command line tools
+.RS
 .BU
 Vi/M
 .BU
-Unix CoreUtils (cat, grep, rm, touch, etc)
+Unix CoreUtils (cat, grep, rm, touch)
 .BU
 SSH
+.RE
 .SH
 Scouting
-.LP
+.BU
 Earned more than 500 service hours working on various service projects
-.LP
+.BU
 Earned the Triple Crown for completing adventures at Philmont, Seabase, and Summit
-.LP
+.BU
 Volunteered at a Cub Scout day camp
-.LP
+.BU
 Attained the rank of Eagle Scout
