@@ -63,11 +63,11 @@ audio {
 	width: 100%;
 }
 
-blockquote {
+.block {
 	border-left: 5px solid green;
 	padding: 0.5em 5px;
 	background-color: #231E1E;
-	/* overflow-x: wrap; */
+	overflow-x: wrap;
 }
 
 code {
@@ -108,13 +108,13 @@ input {
 	display: center;
 	margin-left: auto;
 	margin-right: auto;
-	width: 100px;
+	width: 125px;
 }
 
 select {
 	background-color: lightgrey;
 	color: black;
-	font-size: 18px;
+	font-size: 14pt;
 	display: center;
 	margin-left: auto;
 	margin-right: auto;

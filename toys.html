@@ -21,7 +21,7 @@
 	<script src="/script/chess.js"></script>
 	<div class="container">
 		<h1>Web Toys</h1>
-		<blockquote>
+		<div class="block">
 			<h2>Base Converter</h2>
 			<table>
 				<tbody>
@@ -71,7 +71,7 @@
 						</td>
 						<td>
 							<input type="text" spellcheck="false" id="rawNum"
-								placeholder="Enter a number" oninput="vchange()">
+								placeholder="Enter Value" oninput="vchange()">
 						</td>
 					</tr>
 					<tr>
@@ -145,20 +145,21 @@
 					</tr>
 				</tbody>
 			</table>
-		</blockquote>
-		<blockquote>
+		</div>
+		<br>
+		<div class="block">
 			<h2>Interest Calculator</h2>
 			<table>
 				<tbody>
 					<tr>
 						<td>Principal (initial investment)</td>
 						<td><input type="number" id="P" oninput="interest()"
-								placeholder="Enter a number"></td>
+								placeholder="Enter Value"></td>
 					</tr>
 					<tr>
 						<td>Annual nominal interest rate</td>
 						<td><input type="number" id="r" oninput="interest()"
-								placeholder="Enter a number"></td>
+								placeholder="Enter Value"></td>
 					</tr>
 					<tr>
 						<td>Compounding period</td>
@@ -170,13 +171,12 @@
 								<option value="52">Weekly</option>
 								<option value="-1">Continuously</option>
 								<option value="0" selected>None</option>
-
 							</select></td>
 					</tr>
 					<tr>
 						<td>Years</td>
 						<td><input type="number" id="t" oninput="interest()"
-								placeholder="Enter a number"></td>
+								placeholder="Enter Value"></td>
 					</tr>
 					<tr>
 						<td>Accumulated Value</td>
@@ -185,14 +185,15 @@
 					</tr>
 				</tbody>
 			</table>
-		</blockquote>
-		<blockquote>
+		</div>
+		<br>
+		<div class="block">
 			<h2>Temperature Converter</h2>
 			<table>
 				<tbody>
 					<tr>
 						<td>
-							<input type="number" id="tempValue" placeholder="Enter a number"
+							<input type="number" id="tempValue" placeholder="Enter Value"
 								oninput="tChange()">
 						</td>
 						<td>
@@ -230,8 +231,9 @@
 					</tr>
 				</tbody>
 			</table>
-		</blockquote>
-		<blockquote>
+		</div>
+		<br>
+		<div class="block">
 			<h2>Chess 960</h2>
 			<table>
 				<tbody>
@@ -240,23 +242,23 @@
 							<div class="board" id="chessboard"></div>
 						</td>
 						<td>
-							<input id="select960" type="number" value="518" oninput="updatePieces()">
+							<input id="select960" type="number" value="518"
+								oninput="updatePieces()">
 							<br>
-							<p style="font-size: 88%; color: red;" id="error960" hidden>Error: Number out of range (0-959)</p>
+							<p style="font-size: 88%; color: red;" id="error960" hidden>
+								Error: Number out of range (0-959)</p>
 						</td>
 					</tr>
 					<tr>
 						<td>
-					<button style="margin-top: 10px" onclick="shufflePieces()">Shuffle</button>
+							<button style="margin-top: 10px"
+								onclick="shufflePieces()">Shuffle</button>
 						</td>
 					</tr>
 				</tbody>
-
 			</table>
-	<script>drawBoard()</script>
-
-	</blockquote>
-	</div>
+			<script>drawBoard()</script>
+		</div>
 </body>
 
 </html>
