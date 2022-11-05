@@ -61,8 +61,7 @@ function arrangePieces(id) {
 	pieces[i] = "q";
 	id = Math.floor(id / 6);
 	let krn = KRNCODE[id];
-	j = 0;
-	for (i = 0; j < krn.length; i++)
+	for ([i, j] = [0, 0]; j < krn.length; i++)
 		if (pieces[i] === null)
 			pieces[i] = krn[j++];
 }
