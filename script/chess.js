@@ -51,7 +51,6 @@ function shufflePieces() {
 function arrangePieces(id) {
 	/* Position is 0-959 */
 	/* https://www.museum.am/chess/com_chessguide/fisher_random_chess.html */
-	console.log(id);
 	for (i = 0; i < 8; i++)
 		pieces[i] = null;
 	pieces[id % 4 * 2 + 1] = "b";
@@ -66,7 +65,6 @@ function arrangePieces(id) {
 	for (i = 0; j < krn.length; i++)
 		if (pieces[i] === null)
 			pieces[i] = krn[j++];
-	console.log(pieces);
 }
 
 function updatePieces() {
