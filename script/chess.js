@@ -2,8 +2,7 @@
 let pieces = new Array(8);
 let startPiece = "<img src=\"/img/";
 let endPiece = ".svg\" class=\"piece\">";
-let tiles;
-let i, j;
+let tiles, i, j;
 const BOARDSIZE = 64;
 const BOARDWIDTH = 8;
 let KRNCODE = {

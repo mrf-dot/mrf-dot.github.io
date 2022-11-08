@@ -1,7 +1,5 @@
 .so format.ms
 .TL
-R\['e]sum\['e]
-.AU
 Mitch Feigenbaum
 .SH
 Contact Info
@@ -26,7 +24,7 @@ l l l.
 SAT
 .LP
 .TS H
-doublebox;
+allbox expand;
 cB cB.
 Section	Score
 .TH
@@ -40,7 +38,7 @@ Total	1410
 Advanced Placement Courses
 .LP
 .TS H
-doublebox;
+allbox expand;
 cB cB cB.
 Title	Year	Exam Score
 .TH

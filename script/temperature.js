@@ -1,6 +1,4 @@
-let tval;
-let sigfigs;
-
+let tval, sigfigs;
 
 function fromF() {
 	if (tval == 32)
