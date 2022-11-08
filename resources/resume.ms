@@ -107,4 +107,6 @@ Earned the Triple Crown for completing adventures at Philmont, Seabase, and Summ
 .BU
 Volunteered at a Cub Scout day camp
 .BU
+Inducted into the Order of the Arrow
+.BU
 Attained the rank of Eagle Scout
