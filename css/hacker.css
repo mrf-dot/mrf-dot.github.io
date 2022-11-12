@@ -53,11 +53,10 @@ a:active {
 	color: lime;
 	font-family: consolas, sans-serif;
 	font-size: 14pt;
-	margin: 45px auto 20px auto;
+	margin: 45px auto 80px auto;
 	display: block;
 	max-width: 1500px;
 	overflow: hidden;
-	/* height: 100%; */
 }
 
 footer {
