@@ -57,6 +57,25 @@ a:active {
 	max-width: 1500px;
 }
 
+.block {
+	border-left: 5px solid green;
+	padding: 0.5em 5px;
+	background-color: #231E1E;
+	width: auto;
+	overflow-x: scroll;
+	margin-top: 20px;
+}
+
+.board {
+	height: 400px;
+	width: 400px;
+	display: block;
+	border: 15px solid black;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
 footer {
 	background-color: #202020;
 	position: absolute;
@@ -81,14 +100,6 @@ figcaption {
 
 audio {
 	width: 100%;
-}
-
-.block {
-	border-left: 5px solid green;
-	padding: 0.5em 5px;
-	background-color: #231E1E;
-	width: auto;
-	overflow-x: scroll;
 }
 
 code {
@@ -174,16 +185,6 @@ button:active {
 	color: red;
 	outline: 1px solid darkred;
 	background-color: lightgrey;
-}
-
-.board {
-	height: 400px;
-	width: 400px;
-	display: block;
-	border: 15px solid black;
-	display: block;
-	margin-left: auto;
-	margin-right: auto;
 }
 
 /* Inspired by https://www.chessjournal.com/how-to-make-chess-board-css/ */
