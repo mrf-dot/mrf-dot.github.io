@@ -29,7 +29,7 @@ a:active {
 	color: green;
 }
 
-.nav {
+#nav {
 	overflow: hidden;
 	background-color: #202020;
 	position: fixed;
@@ -39,7 +39,7 @@ a:active {
 	font-size: 14pt;
 	z-index: 9;
 }
-.nav a {
+#nav a {
 	float: left;
 	display: block;
 	text-align: center;
@@ -47,7 +47,7 @@ a:active {
 	text-decoration: none;
 }
 
-.container {
+#container {
 	background-color: black;
 	color: lime;
 	font-family: consolas, sans-serif;
