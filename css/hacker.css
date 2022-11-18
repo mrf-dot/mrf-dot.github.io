@@ -30,7 +30,6 @@ a:active {
 }
 
 #nav {
-	max-width: 1500px;
 	overflow: hidden;
 	background-color: #202020;
 	position: fixed;
@@ -41,6 +40,7 @@ a:active {
 	z-index: 9;
 }
 #nav a {
+	max-width: 1500px;
 	float: left;
 	display: block;
 	text-align: center;
