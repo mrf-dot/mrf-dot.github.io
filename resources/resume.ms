@@ -9,7 +9,7 @@ expand;
 l l.
 Email	mfeigenbaum23@gmail.com
 Github	https://github.com/mrf-dot
-LinkedIn	https://www.linkedin.com/in/mitch-feigenbaum-a6284127b/
+LinkedIn	https://www.linkedin.com/in/mitch-feigenbaum-a6284127b
 Website	https://mrf-dot.github.io
 YouTube	https://www.youtube.com/channel/UCdJoCFI6t7DTzms9Cr3U0hQ
 .TE
