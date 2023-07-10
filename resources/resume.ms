@@ -42,14 +42,18 @@ Advanced Placement Courses
 .TS H
 allbox expand;
 cB cB cB.
-Title	Year	Exam Score
+Year	Exam	Score
 .TH
 .T&
 l c c.
-Computer Science A	2022	5
-Computer Science Principles	2021	4
-US History	2022	4
-World History Modern	2021	4
+2023	Comparative Government and Politics	5
+2023	Psychology	4
+2023	Statistics	3
+2023	United States Government and Politics	4
+2022	Computer Science A	5
+2022	United States History	4
+2021	Computer Science Principles	4
+2021	World History: Modern	4
 .TE
 .SH
 Honors
