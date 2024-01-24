@@ -1,0 +1,4 @@
+baseURL = 'https://mrf-dot.github.io/'
+languageCode = 'en-us'
+title = "Mitch's Website"
+theme = 'terminalcv'
