@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="description" content="Calculate numerical bases, interest, and temperature.">
+	<meta name="keywords"
+		content="Base Calculator, bases, interest calculator, interest, temperature, temperature calculator, mrf-dot, programming, program">
+	<meta name="author" content="Mitch Feigenbaum">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Web Toys</title>
+	<link rel="stylesheet" type="text/css" href="/css/hacker.css" media="all" />
+	<script src="/script/header.js" defer></script>
+	<script src="/script/copy.js"></script>
+	<script src="/script/basechange.js"></script>
+	<script src="/script/interest.js"></script>
+	<script src="/script/temperature.js"></script>
+	<script src="/script/chess.js"></script>
+</head>
+
+<body>
+	<div id="container">
+		<h1>Web Toys</h1>
+		<div class="block">
+			<h2>Base Converter</h2>
+			<table>
+				<tbody>
+					<tr>
+						<td>
+							<select id="base" onchange="bchange()">
+								<option value="2">Binary (2)</option>
+								<option value="8">Octal (8)</option>
+								<option value="10" selected>Decimal (10)</option>
+								<option value="16">Hexadecimal (16)</option>
+								<option value="32">Base32 (32)</option>
+								<option value="custom">Custom</option>
+							</select>
+							<select id="custom" onchange="bchange()" hidden>
+								<option value="2">2</option>
+								<option value="3">3</option>
+								<option value="4">4</option>
+								<option value="5">5</option>
+								<option value="6">6</option>
+								<option value="7">7</option>
+								<option value="8">8</option>
+								<option value="9">9</option>
+								<option value="10">10</option>
+								<option value="11">11</option>
+								<option value="12">12</option>
+								<option value="13">13</option>
+								<option value="14">14</option>
+								<option value="15">15</option>
+								<option value="16">16</option>
+								<option value="17">17</option>
+								<option value="18">18</option>
+								<option value="19">19</option>
+								<option value="20">20</option>
+								<option value="21">21</option>
+								<option value="22">22</option>
+								<option value="23">23</option>
+								<option value="24">24</option>
+								<option value="25">25</option>
+								<option value="26">26</option>
+								<option value="27">27</option>
+								<option value="28">28</option>
+								<option value="29">29</option>
+								<option value="30">30</option>
+								<option value="31">31</option>
+								<option value="32">32</option>
+							</select>
+						</td>
+						<td>
+							<input type="text" spellcheck="false" id="rawNum"
+								placeholder="Enter Value" oninput="vchange()">
+						</td>
+					</tr>
+					<tr>
+						<th scope="col">Base</th>
+						<th scope="col">Value</th>
+					</tr>
+					<tr>
+						<td>Binary</td>
+						<td><input id="bin" value="0" readonly></td>
+						<td><button onclick="copy('bin')">COPY</button></td>
+					</tr>
+					<tr>
+						<td>Octal</td>
+						<td><input id="octal" value="0" readonly></td>
+						<td><button onclick="copy('octal')">COPY</button></td>
+					</tr>
+					<tr>
+						<td>Decimal</td>
+						<td><input id="decimal" value="0" readonly></td>
+						<td><button onclick="copy('decimal')">COPY</button></td>
+					</tr>
+					<tr>
+						<td>Hexadecimal</td>
+						<td><input id="hex" value="0" readonly></td>
+						<td><button onclick="copy('hex')">COPY</button></td>
+					</tr>
+					</tr>
+					<tr>
+						<td>Base32</td>
+						<td><input id="base32" value="0" readonly></td>
+						<td><button onclick="copy('base32')">COPY</button></td>
+					</tr>
+					<tr>
+						<td>Base
+							<select id="selectBase" onchange="cbchange()">
+								<option value="2">2</option>
+								<option value="3">3</option>
+								<option value="4">4</option>
+								<option value="5">5</option>
+								<option value="6">6</option>
+								<option value="7">7</option>
+								<option value="8">8</option>
+								<option value="9">9</option>
+								<option value="10">10</option>
+								<option value="11">11</option>
+								<option value="12">12</option>
+								<option value="13">13</option>
+								<option value="14">14</option>
+								<option value="15">15</option>
+								<option value="16">16</option>
+								<option value="17">17</option>
+								<option value="18">18</option>
+								<option value="19">19</option>
+								<option value="20">20</option>
+								<option value="21">21</option>
+								<option value="22">22</option>
+								<option value="23">23</option>
+								<option value="24">24</option>
+								<option value="25">25</option>
+								<option value="26">26</option>
+								<option value="27">27</option>
+								<option value="28">28</option>
+								<option value="29">29</option>
+								<option value="30">30</option>
+								<option value="31">31</option>
+								<option value="32">32</option>
+							</select>
+						</td>
+						<td><input id="cbase" value="0" readonly></td>
+						<td><button onclick="copy('cbase')">COPY</button></td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+		<div class="block">
+			<h2>Interest Calculator</h2>
+			<table>
+				<tbody>
+					<tr>
+						<td>Principal (initial investment)</td>
+						<td><input type="number" id="P" oninput="interest()"
+								placeholder="Enter Value">
+						</td>
+					</tr>
+					<tr>
+						<td>Annual nominal interest rate</td>
+						<td><input type="number" id="r" oninput="interest()"
+								placeholder="Enter Value">
+						</td>
+					</tr>
+					<tr>
+						<td>Compounding period</td>
+						<td><select id="n" onchange="interest()">
+								<option value="1">Annually</option>
+								<option value="2">Semiannually</option>
+								<option value="4">Quarterly</option>
+								<option value="12">Monthly</option>
+								<option value="52">Weekly</option>
+								<option value="-1">Continuously</option>
+								<option value="0" selected>None</option>
+							</select></td>
+					</tr>
+					<tr>
+						<td>Years</td>
+						<td><input type="number" id="t" oninput="interest()"
+								placeholder="Enter Value">
+						</td>
+					</tr>
+					<tr>
+						<td>Accumulated Value</td>
+						<td><input id="A" readonly></td>
+						<td><button onclick="copy('A')">COPY</button></td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+		<div class="block">
+			<h2>Temperature Converter</h2>
+			<table>
+				<tbody>
+					<tr>
+						<td>
+							<input type="number" id="tempValue" placeholder="Enter Value"
+								oninput="tChange()">
+						</td>
+						<td>
+							<select id="tempUnit" onchange="tChange()">
+								<option value="c">&deg;C</option>
+								<option value="f">&deg;F</option>
+								<option value="k">K</option>
+								<option value="r">R</option>
+							</select>
+						</td>
+					</tr>
+					<tr>
+						<th scope="col">Unit</th>
+						<th scope="col">Value</th>
+					</tr>
+					<tr>
+						<td>Celsius</td>
+						<td><input id="celsius" readonly></td>
+						<td><button onclick="copy('celsius')">COPY</button></td>
+					</tr>
+					<tr>
+						<td>Fahrenheit</td>
+						<td><input id="fahrenheit" readonly></td>
+						<td><button onclick="copy('fahrenheit')">COPY</button></td>
+					</tr>
+					<tr>
+						<td>Kelvin</td>
+						<td><input id="kelvin" readonly></td>
+						<td><button onclick="copy('kelvin')">COPY</button></td>
+					</tr>
+					<tr>
+						<td>Rankine</td>
+						<td><input id="rankine" readonly></td>
+						<td><button onclick="copy('rankine')">COPY</button></td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+		<div class="block">
+			<h2>Chess 960</h2>
+			<table>
+				<tbody>
+					<tr>
+						<td>
+							<div class="board" id="chessboard"></div>
+						</td>
+						<td>
+							<input id="select960" type="number" value="518"
+								oninput="updatePieces()">
+							<p style="font-size: 88%; color: red;" id="error960" hidden>
+								Error: Number out of range (0-959)</p>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<button style="margin: 10px auto 0 auto;"
+								onclick="shufflePieces()">Shuffle</button>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			<script>drawBoard()</script>
+		</div>
+	</div>
+</body>
+
+</html>
