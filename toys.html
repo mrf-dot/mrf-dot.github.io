@@ -4,12 +4,11 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="description" content="Calculate numerical bases, interest, and temperature.">
-	<meta name="keywords"
-		content="Base Calculator, bases, interest calculator, interest, temperature, temperature calculator, mrf-dot, programming, program">
+	<meta name="keywords" content="Base Calculator, bases, interest calculator, interest, temperature, temperature calculator, mrf-dot, programming, program">
 	<meta name="author" content="Mitch Feigenbaum">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Web Toys</title>
-	<link rel="stylesheet" type="text/css" href="/css/hacker.css" media="all" />
+	<link rel="stylesheet" type="text/css" href="/css/hacker.css" media="all">
 	<script src="/script/header.js" defer></script>
 	<script src="/script/copy.js"></script>
 	<script src="/script/basechange.js"></script>
@@ -70,8 +69,7 @@
 							</select>
 						</td>
 						<td>
-							<input type="text" spellcheck="false" id="rawNum"
-								placeholder="Enter Value" oninput="vchange()">
+							<input type="text" spellcheck="false" id="rawNum" placeholder="Enter Value" oninput="vchange()">
 						</td>
 					</tr>
 					<tr>
@@ -152,14 +150,12 @@
 				<tbody>
 					<tr>
 						<td>Principal (initial investment)</td>
-						<td><input type="number" id="P" oninput="interest()"
-								placeholder="Enter Value">
+						<td><input type="number" id="P" oninput="interest()" placeholder="Enter Value">
 						</td>
 					</tr>
 					<tr>
 						<td>Annual nominal interest rate</td>
-						<td><input type="number" id="r" oninput="interest()"
-								placeholder="Enter Value">
+						<td><input type="number" id="r" oninput="interest()" placeholder="Enter Value">
 						</td>
 					</tr>
 					<tr>
@@ -176,8 +172,7 @@
 					</tr>
 					<tr>
 						<td>Years</td>
-						<td><input type="number" id="t" oninput="interest()"
-								placeholder="Enter Value">
+						<td><input type="number" id="t" oninput="interest()" placeholder="Enter Value">
 						</td>
 					</tr>
 					<tr>
@@ -194,8 +189,7 @@
 				<tbody>
 					<tr>
 						<td>
-							<input type="number" id="tempValue" placeholder="Enter Value"
-								oninput="tChange()">
+							<input type="number" id="tempValue" placeholder="Enter Value" oninput="tChange()">
 						</td>
 						<td>
 							<select id="tempUnit" onchange="tChange()">
@@ -242,21 +236,21 @@
 							<div class="board" id="chessboard"></div>
 						</td>
 						<td>
-							<input id="select960" type="number" value="518"
-								oninput="updatePieces()">
+							<input id="select960" type="number" value="518" oninput="updatePieces()">
 							<p style="font-size: 88%; color: red;" id="error960" hidden>
 								Error: Number out of range (0-959)</p>
 						</td>
 					</tr>
 					<tr>
 						<td>
-							<button style="margin: 10px auto 0 auto;"
-								onclick="shufflePieces()">Shuffle</button>
+							<button style="margin: 10px auto 0 auto;" onclick="shufflePieces()">Shuffle</button>
 						</td>
 					</tr>
 				</tbody>
 			</table>
-			<script>drawBoard()</script>
+			<script>
+				drawBoard()
+			</script>
 		</div>
 	</div>
 </body>
