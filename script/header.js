@@ -3,7 +3,6 @@ const PAGES = {
 	Resume: "resume",
 	Projects: "repos",
 	WebToys: "toys",
-	QRCode: "qrcode"
 };
 let nav, foot;
 
