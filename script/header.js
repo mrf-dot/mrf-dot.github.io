@@ -2,7 +2,8 @@ const PAGES = {
 	Home: "index",
 	Resume: "resume",
 	Projects: "repos",
-	WebToys: "toys"
+	WebToys: "toys",
+	QRCode: "qrcode"
 };
 let nav, foot;
 
