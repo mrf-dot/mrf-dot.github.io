@@ -21,7 +21,7 @@ function createFoot() {
 	foot = document.createElement("footer");
 	foot.innerHTML = "&copy; " + new Date().getFullYear() + " ";
 	var a = document.createElement("a");
-	a.href = "mailto:mfeigenbaum23@gmail.com";
+	a.href = "mailto:mitch@mitchf.me";
 	a.innerHTML="Mitch Feigenbaum";
 	foot.append(a);
 }
