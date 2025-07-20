@@ -1,6 +1,5 @@
 html {
 	min-height: 100%;
-	color: lime;
 	font-family: consolas, sans-serif;
 	background-color: black;
 	position: relative;
@@ -16,12 +15,12 @@ hr {
 
 a:link,
 a:visited {
-	color: white;
+	color: lime;
 }
 
 a:hover {
 	transition: .3s;
-	color: grey;
+	color: green;
 }
 
 a:active {
