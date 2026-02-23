@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio Rebalance - Mitch Feigenbaum</title>
+    <link rel="stylesheet" type="text/css" href="/css/hacker.css" media="all">
+    <script src="/script/copy.js"></script>
+    <script src="/script/rebalance.js" defer></script>
+</head>
+<body>
+    <div id="nav">
+        <a href="/index.html">Home</a>
+        <a href="/resume.html">Resume</a>
+        <a href="/repos.html">Projects</a>
+        <a href="/toys.html">WebToys</a>
+        <a href="/rebalance.html">Rebalance</a>
+    </div>
+    <div id="container">
+        <h1>Portfolio Rebalancer</h1>
+
+	<div class="block">
+            <h2>Current Holdings</h2>
+            <table id="holdingsTable">
+                <thead>
+                    <tr>
+                        <th>Stock Ticker</th>
+                        <th>Shares Held</th>
+                        <th>Price ($)</th>
+                        <th>Target %</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody id="inventory">
+                    <tr>
+                        <td><input type="text" class="ticker" placeholder="e.g. VOO" oninput="calculate()"></td>
+                        <td><input type="number" class="shares" value="0" min="0" oninput="calculate()"></td>
+                        <td><input type="number" class="price" value="0" min="0" oninput="calculate()"></td>
+                        <td><input type="number" class="target" value="0" min="0" max="100" oninput="calculate()"></td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+            <button onclick="addRow()" style="margin: 10px auto;">+ Add Asset</button>
+        </div>
+
+        <div class="block">
+            <h2>Rebalance Settings</h2>
+            <table>
+                <tr>
+                    <td>Additional Deposit ($)</td>
+                    <td><input type="number" id="deposit" value="0" min="0" oninput="calculate()"></td>
+                </tr>
+                <tr>
+                    <td>Allow Selling (Full Rebalance)</td>
+                    <td><input type="checkbox" id="allowSell" checked onchange="calculate()"></td>
+                </tr>
+                <tr>
+                    <td>Total Portfolio Value</td>
+                    <td><input id="totalValue" readonly></td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="block">
+            <h2>Rebalance Settings</h2>
+            <table>
+                <tr>
+                    <td>Additional Deposit ($)</td>
+                    <td><input type="number" id="deposit" value="0" oninput="calculate()"></td>
+                </tr>
+                <tr>
+                    <td>Allow Selling (Full Rebalance)</td>
+                    <td><input type="checkbox" id="allowSell" checked onchange="calculate()"></td>
+                </tr>
+                <tr>
+                    <td>Total Portfolio Value</td>
+                    <td><input id="totalValue" readonly></td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="block" id="resultsBlock" hidden>
+            <h2>Action Plan</h2>
+            <table id="resultsTable">
+                <thead>
+                    <tr>
+                        <th>Ticker</th>
+                        <th>Action</th>
+                        <th>Shares</th>
+                        <th>Amount ($)</th>
+                    </tr>
+                </thead>
+                <tbody id="resultsBody"></tbody>
+            </table>
+        </div>
+    </div>
+    <footer>
+        &copy; <a href="mailto:mitch@mitchf.me">Mitch Feigenbaum</a>
+    </footer>
+</body>
+</html>
