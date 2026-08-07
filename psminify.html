@@ -26,7 +26,7 @@
 			<div class="ps-layout">
 				<div class="ps-pane">
 					<h3>Input Script</h3>
-					<div class="codebox-wrap textbox-center">
+					<div class="codebox-wrap textbox-center" id="psInputWrap">
 						<ol id="psInputLines" class="line-numbers" aria-hidden="true"></ol>
 						<textarea id="psInput" class="textbox-center codebox" rows="16" placeholder="Paste PowerShell script here..." spellcheck="false" wrap="soft" oninput="handlePsInput()" onscroll="syncInputScroll()"></textarea>
 					</div>
@@ -37,9 +37,9 @@
 				</div>
 				<div class="ps-pane">
 					<h3 id="outputHeading">Batch Command</h3>
-					<div class="codebox-wrap textbox-center">
+					<div class="codebox-wrap textbox-center" id="batchOutputWrap">
 						<ol id="batchOutputLines" class="line-numbers" aria-hidden="true"></ol>
-						<textarea id="batchOutput" class="textbox-center codebox" rows="16" readonly spellcheck="false" wrap="off" onscroll="syncOutputScroll()"></textarea>
+						<textarea id="batchOutput" class="textbox-center codebox" rows="1" readonly spellcheck="false" wrap="off" onscroll="syncOutputScroll()"></textarea>
 					</div>
 					<button style="margin: 10px auto;" onclick="copy('batchOutput')">COPY</button>
 				</div>
