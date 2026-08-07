@@ -24,16 +24,16 @@
 		<h1>PowerShell Minifier</h1>
 		<div class="block" id="psTool">
 			<h2>Script Tool</h2>
-			<div class="ps-switch-row">
-				<label for="asBatchCommand">Output Batch Command</label>
-				<input type="checkbox" id="asBatchCommand" checked onchange="handleToggleChange()">
-			</div>
 			<div class="ps-layout">
 				<div class="ps-pane">
 					<h3>Input Script</h3>
 					<div class="codebox-wrap textbox-center">
 						<ol id="psInputLines" class="line-numbers" aria-hidden="true"></ol>
 						<textarea id="psInput" class="textbox-center codebox" rows="16" placeholder="Paste PowerShell script here..." spellcheck="false" wrap="soft" oninput="handlePsInput()" onscroll="syncInputScroll()"></textarea>
+					</div>
+					<div class="ps-switch-row">
+						<label for="asBatchCommand">Output Batch Command</label>
+						<input type="checkbox" id="asBatchCommand" checked onchange="handleToggleChange()">
 					</div>
 				</div>
 				<div class="ps-pane">
