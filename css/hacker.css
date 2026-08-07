@@ -233,6 +233,12 @@ textarea {
 	overflow-x: auto;
 }
 
+#batchOutput {
+	overflow-y: hidden;
+	overflow-x: auto;
+	white-space: pre;
+}
+
 select {
 	background-color: lightgrey;
 	color: black;

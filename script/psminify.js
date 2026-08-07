@@ -70,8 +70,39 @@ function needsStatementSeparator(previousLine, currentLine) {
 	if (/[({\[,|]$/.test(previousLine)) return false;
 	if (/`$/.test(previousLine)) return false;
 	if (/^(?:[)\]}]|[|,]|\.|::|\?\.|\?\[)/.test(currentLine)) return false;
+	if (/^(?:else|elseif|catch|finally|while)\b/.test(currentLine)) return false;
+	if (/^\{/.test(currentLine) && /(?:\)|\b(?:if|elseif|else|switch|foreach|for|while|do|try|catch|finally|function|filter|class|enum|workflow|data)\s*)$/.test(previousLine)) {
+		return false;
+	}
 
 	return true;
+}
+
+function formatMinifiedTokens(tokens) {
+	let output = "";
+
+	for (const token of tokens) {
+		if (output.length === 0) {
+			output = token;
+			continue;
+		}
+
+		const needsNoLeadingSpace =
+			token === ";" ||
+			token.startsWith("}") ||
+			token.startsWith("]") ||
+			token.startsWith(")") ||
+			token === "{";
+
+		if (needsNoLeadingSpace) {
+			output += token;
+			continue;
+		}
+
+		output += ` ${token}`;
+	}
+
+	return output;
 }
 
 function minifyPowerShell(script) {
@@ -91,7 +122,7 @@ function minifyPowerShell(script) {
 		previousLine = line;
 	}
 
-	return cleaned.join(" ").replace(/\s+/g, " ").trim();
+	return formatMinifiedTokens(cleaned);
 }
 
 function quoteForSingleQuotedPowerShellArg(text) {
