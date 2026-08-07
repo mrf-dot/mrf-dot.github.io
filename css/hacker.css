@@ -159,6 +159,60 @@ textarea {
 	margin-right: auto;
 }
 
+.ps-layout {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 16px;
+}
+
+.ps-pane {
+	flex: 1 1 460px;
+}
+
+.ps-pane h3 {
+	text-align: center;
+	margin-top: 0;
+}
+
+.codebox-wrap {
+	display: flex;
+	align-items: stretch;
+	border: 1px solid #8f8f8f;
+	background-color: lightgrey;
+	width: 100%;
+	max-width: 100%;
+}
+
+.line-numbers {
+	margin: 0;
+	padding: 0.5em 0.4em;
+	list-style: none;
+	background-color: #d5d5d5;
+	color: #222;
+	text-align: right;
+	min-width: 3em;
+	overflow: hidden;
+	font-size: 14pt;
+	border-right: 1px solid #8f8f8f;
+	user-select: none;
+}
+
+.line-numbers li {
+	line-height: 1.2;
+	height: 1.2em;
+}
+
+.codebox {
+	margin: 0;
+	width: 100%;
+	box-sizing: border-box;
+	border: 0;
+	padding: 0.5em;
+	line-height: 1.2;
+	resize: vertical;
+	overflow: auto;
+}
+
 select {
 	background-color: lightgrey;
 	color: black;

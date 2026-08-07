@@ -80,25 +80,70 @@ function quoteForSingleQuotedPowerShellArg(text) {
 	return text.replace(/'/g, "''");
 }
 
+function setLineNumbers(textarea, lineNumbers) {
+	const lineCount = Math.max(1, textarea.value.split("\n").length);
+	let markup = "";
+
+	for (let i = 1; i <= lineCount; i++) {
+		markup += `<li>${i}</li>`;
+	}
+
+	lineNumbers.innerHTML = markup;
+	lineNumbers.scrollTop = textarea.scrollTop;
+}
+
 function runMinify() {
 	const input = document.getElementById("psInput");
 	const output = document.getElementById("batchOutput");
-	const minifiedOutput = document.getElementById("minifiedOutput");
-	const status = document.getElementById("status");
+	const asBatchCommand = document.getElementById("asBatchCommand");
+	const outputHeading = document.getElementById("outputHeading");
+	const outputLines = document.getElementById("batchOutputLines");
 	const source = input.value || "";
 	const minified = minifyPowerShell(source);
+	const shouldUseBatch = asBatchCommand.checked;
+
+	outputHeading.textContent = shouldUseBatch ? "Batch Command" : "Minified Script";
 
 	if (!minified) {
-		status.textContent = "No script content to minify.";
-		minifiedOutput.value = "";
 		output.value = "";
+		setLineNumbers(output, outputLines);
 		return;
 	}
 
-	const escaped = quoteForSingleQuotedPowerShellArg(minified);
-	const command = `powershell -command '${escaped}'`;
+	if (shouldUseBatch) {
+		const escaped = quoteForSingleQuotedPowerShellArg(minified);
+		output.value = `powershell -command '${escaped}'`;
+	} else {
+		output.value = minified;
+	}
 
-	status.textContent = "Generated minified script and batch command.";
-	minifiedOutput.value = minified;
-	output.value = command;
+	setLineNumbers(output, outputLines);
 }
+
+function initializePsMinify() {
+	const input = document.getElementById("psInput");
+	const output = document.getElementById("batchOutput");
+	const inputLines = document.getElementById("psInputLines");
+	const outputLines = document.getElementById("batchOutputLines");
+	const asBatchCommand = document.getElementById("asBatchCommand");
+
+	input.addEventListener("input", () => {
+		setLineNumbers(input, inputLines);
+		runMinify();
+	});
+
+	input.addEventListener("scroll", () => {
+		inputLines.scrollTop = input.scrollTop;
+	});
+
+	output.addEventListener("scroll", () => {
+		outputLines.scrollTop = output.scrollTop;
+	});
+
+	asBatchCommand.addEventListener("change", runMinify);
+
+	setLineNumbers(input, inputLines);
+	setLineNumbers(output, outputLines);
+}
+
+document.addEventListener("DOMContentLoaded", initializePsMinify);

@@ -23,29 +23,31 @@
 	<div id="container">
 		<h1>PowerShell Minifier</h1>
 		<div class="block">
-			<h2>Input Script</h2>
-			<div class="codebox-wrap textbox-center">
-				<ol id="psInputLines" class="line-numbers" aria-hidden="true"></ol>
-				<textarea id="psInput" class="textbox-center codebox" rows="14" cols="80" placeholder="Paste PowerShell script here..." spellcheck="false" wrap="soft"></textarea>
+			<h2>Script Tool</h2>
+			<table>
+				<tr>
+					<td>Output Batch Command</td>
+					<td><input type="checkbox" id="asBatchCommand" checked></td>
+				</tr>
+			</table>
+			<div class="ps-layout">
+				<div class="ps-pane">
+					<h3>Input Script</h3>
+					<div class="codebox-wrap textbox-center">
+						<ol id="psInputLines" class="line-numbers" aria-hidden="true"></ol>
+						<textarea id="psInput" class="textbox-center codebox" rows="16" cols="80" placeholder="Paste PowerShell script here..." spellcheck="false" wrap="soft"></textarea>
+					</div>
+				</div>
+				<div class="ps-pane">
+					<h3 id="outputHeading">Batch Command</h3>
+					<div class="codebox-wrap textbox-center">
+						<ol id="batchOutputLines" class="line-numbers" aria-hidden="true"></ol>
+						<textarea id="batchOutput" class="textbox-center codebox" rows="16" cols="80" readonly spellcheck="false" wrap="soft"></textarea>
+					</div>
+					<button style="margin: 10px auto;" onclick="copy('batchOutput')">COPY</button>
+				</div>
 			</div>
-			<button style="margin: 10px auto;" onclick="runMinify()">Minify + Build Batch Command</button>
-			<p id="status"></p>
-		</div>
-		<div class="block">
-			<h2>Minified Script (Single Line)</h2>
-			<div class="codebox-wrap textbox-center">
-				<ol id="minifiedOutputLines" class="line-numbers" aria-hidden="true"></ol>
-				<textarea id="minifiedOutput" class="textbox-center codebox" rows="6" cols="80" readonly spellcheck="false" wrap="soft"></textarea>
-			</div>
-			<button style="margin: 10px auto;" onclick="copy('minifiedOutput')">COPY</button>
-		</div>
-		<div class="block">
-			<h2>Batch Command</h2>
-			<div class="codebox-wrap textbox-center">
-				<ol id="batchOutputLines" class="line-numbers" aria-hidden="true"></ol>
-				<textarea id="batchOutput" class="textbox-center codebox" rows="6" cols="80" readonly spellcheck="false" wrap="soft"></textarea>
-			</div>
-			<button style="margin: 10px auto;" onclick="copy('batchOutput')">COPY</button>
+			<button style="margin: 10px auto;" onclick="runMinify()">Run</button>
 		</div>
 	</div>
 	<footer>
