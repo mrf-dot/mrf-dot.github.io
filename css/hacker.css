@@ -161,17 +161,32 @@ textarea {
 
 .ps-layout {
 	display: flex;
-	flex-wrap: wrap;
+	flex-wrap: nowrap;
 	gap: 16px;
+	align-items: stretch;
 }
 
 .ps-pane {
-	flex: 1 1 460px;
+	flex: 1 1 0;
+	min-width: 0;
 }
 
 .ps-pane h3 {
 	text-align: center;
 	margin-top: 0;
+}
+
+.ps-switch-row {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 10px;
+	margin-bottom: 12px;
+}
+
+.ps-switch-row input[type="checkbox"] {
+	width: auto;
+	margin: 0;
 }
 
 .codebox-wrap {
@@ -184,15 +199,18 @@ textarea {
 }
 
 .line-numbers {
+	flex: 0 0 3em;
 	margin: 0;
 	padding: 0.5em 0.4em;
 	list-style: none;
 	background-color: #d5d5d5;
-	color: #222;
+	color: #000;
 	text-align: right;
 	min-width: 3em;
 	overflow: hidden;
 	font-size: 14pt;
+	font-family: consolas, monospace;
+	white-space: nowrap;
 	border-right: 1px solid #8f8f8f;
 	user-select: none;
 }
@@ -209,7 +227,7 @@ textarea {
 	border: 0;
 	padding: 0.5em;
 	line-height: 1.2;
-	resize: vertical;
+	resize: none;
 	overflow: auto;
 }
 

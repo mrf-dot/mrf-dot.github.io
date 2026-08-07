@@ -81,14 +81,12 @@ function quoteForSingleQuotedPowerShellArg(text) {
 }
 
 function setLineNumbers(textarea, lineNumbers) {
+	if (!textarea || !lineNumbers) return;
+
 	const lineCount = Math.max(1, textarea.value.split("\n").length);
-	let markup = "";
-
-	for (let i = 1; i <= lineCount; i++) {
-		markup += `<li>${i}</li>`;
-	}
-
-	lineNumbers.innerHTML = markup;
+	const entries = [];
+	for (let i = 1; i <= lineCount; i++) entries.push(`<li>${i}</li>`);
+	lineNumbers.innerHTML = entries.join("");
 	lineNumbers.scrollTop = textarea.scrollTop;
 }
 
@@ -98,6 +96,8 @@ function runMinify() {
 	const asBatchCommand = document.getElementById("asBatchCommand");
 	const outputHeading = document.getElementById("outputHeading");
 	const outputLines = document.getElementById("batchOutputLines");
+	if (!input || !output || !asBatchCommand || !outputHeading || !outputLines) return;
+
 	const source = input.value || "";
 	const minified = minifyPowerShell(source);
 	const shouldUseBatch = asBatchCommand.checked;
@@ -126,6 +126,7 @@ function initializePsMinify() {
 	const inputLines = document.getElementById("psInputLines");
 	const outputLines = document.getElementById("batchOutputLines");
 	const asBatchCommand = document.getElementById("asBatchCommand");
+	if (!input || !output || !inputLines || !outputLines || !asBatchCommand) return;
 
 	input.addEventListener("input", () => {
 		setLineNumbers(input, inputLines);
@@ -143,7 +144,7 @@ function initializePsMinify() {
 	asBatchCommand.addEventListener("change", runMinify);
 
 	setLineNumbers(input, inputLines);
-	setLineNumbers(output, outputLines);
+	runMinify();
 }
 
 document.addEventListener("DOMContentLoaded", initializePsMinify);
