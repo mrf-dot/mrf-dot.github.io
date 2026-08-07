@@ -63,17 +63,35 @@ function stripLineComment(line) {
 	return line.trimEnd();
 }
 
+function needsStatementSeparator(previousLine, currentLine) {
+	if (!previousLine) return false;
+
+	// Continuation contexts where a statement separator would change parsing.
+	if (/[({\[,|]$/.test(previousLine)) return false;
+	if (/`$/.test(previousLine)) return false;
+	if (/^(?:[)\]}]|[|,]|\.|::|\?\.|\?\[)/.test(currentLine)) return false;
+
+	return true;
+}
+
 function minifyPowerShell(script) {
 	const withoutBlockComments = stripBlockComments(script).replace(/\r/g, "");
 	const lines = withoutBlockComments.split("\n");
 	const cleaned = [];
+	let previousLine = "";
 
 	for (const rawLine of lines) {
 		const line = stripLineComment(rawLine).trim();
-		if (line.length > 0) cleaned.push(line);
+		if (line.length === 0) continue;
+
+		if (needsStatementSeparator(previousLine, line)) {
+			cleaned.push(";");
+		}
+		cleaned.push(line);
+		previousLine = line;
 	}
 
-	return cleaned.join("; ");
+	return cleaned.join(" ").replace(/\s+/g, " ").trim();
 }
 
 function quoteForSingleQuotedPowerShellArg(text) {
