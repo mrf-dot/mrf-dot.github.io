@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="description" content="Minify PowerShell and generate a one-line batch command.">
+	<meta name="keywords" content="PowerShell, minify, batch, command, script">
+	<meta name="author" content="Mitch Feigenbaum">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>PowerShell Minifier</title>
+	<link rel="stylesheet" type="text/css" href="/css/hacker.css" media="all">
+	<script src="/script/copy.js"></script>
+	<script src="/script/psminify.js" defer></script>
+</head>
+<body>
+	<div id="nav">
+		<a href="/index.html">Home</a>
+		<a href="/resume.html">Resume</a>
+		<a href="/repos.html">Projects</a>
+		<a href="/toys.html">WebToys</a>
+		<a href="/rebalance.html">Rebalance</a>
+		<a href="/psminify.html">PS Minify</a>
+	</div>
+	<div id="container">
+		<h1>PowerShell Minifier</h1>
+		<div class="block">
+			<h2>Input Script</h2>
+			<textarea id="psInput" rows="14" cols="80" placeholder="Paste PowerShell script here..." spellcheck="false"></textarea>
+			<button style="margin: 10px auto;" onclick="runMinify()">Minify + Build Batch Command</button>
+			<p id="status"></p>
+		</div>
+		<div class="block">
+			<h2>Minified Script (Single Line)</h2>
+			<textarea id="minifiedOutput" rows="6" cols="80" readonly spellcheck="false"></textarea>
+			<button style="margin: 10px auto;" onclick="copy('minifiedOutput')">COPY</button>
+		</div>
+		<div class="block">
+			<h2>Batch Command</h2>
+			<textarea id="batchOutput" rows="6" cols="80" readonly spellcheck="false"></textarea>
+			<button style="margin: 10px auto;" onclick="copy('batchOutput')">COPY</button>
+		</div>
+	</div>
+	<footer>
+		&copy;
+		<a href="mailto:mitch@mitchf.me">Mitch Feigenbaum</a>
+	</footer>
+</body>
+</html>
