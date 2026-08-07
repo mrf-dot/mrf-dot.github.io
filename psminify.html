@@ -24,18 +24,27 @@
 		<h1>PowerShell Minifier</h1>
 		<div class="block">
 			<h2>Input Script</h2>
-			<textarea id="psInput" class="textbox-center" rows="14" cols="80" placeholder="Paste PowerShell script here..." spellcheck="false"></textarea>
+			<div class="codebox-wrap textbox-center">
+				<ol id="psInputLines" class="line-numbers" aria-hidden="true"></ol>
+				<textarea id="psInput" class="textbox-center codebox" rows="14" cols="80" placeholder="Paste PowerShell script here..." spellcheck="false" wrap="soft"></textarea>
+			</div>
 			<button style="margin: 10px auto;" onclick="runMinify()">Minify + Build Batch Command</button>
 			<p id="status"></p>
 		</div>
 		<div class="block">
 			<h2>Minified Script (Single Line)</h2>
-			<textarea id="minifiedOutput" class="textbox-center" rows="6" cols="80" readonly spellcheck="false"></textarea>
+			<div class="codebox-wrap textbox-center">
+				<ol id="minifiedOutputLines" class="line-numbers" aria-hidden="true"></ol>
+				<textarea id="minifiedOutput" class="textbox-center codebox" rows="6" cols="80" readonly spellcheck="false" wrap="soft"></textarea>
+			</div>
 			<button style="margin: 10px auto;" onclick="copy('minifiedOutput')">COPY</button>
 		</div>
 		<div class="block">
 			<h2>Batch Command</h2>
-			<textarea id="batchOutput" class="textbox-center" rows="6" cols="80" readonly spellcheck="false"></textarea>
+			<div class="codebox-wrap textbox-center">
+				<ol id="batchOutputLines" class="line-numbers" aria-hidden="true"></ol>
+				<textarea id="batchOutput" class="textbox-center codebox" rows="6" cols="80" readonly spellcheck="false" wrap="soft"></textarea>
+			</div>
 			<button style="margin: 10px auto;" onclick="copy('batchOutput')">COPY</button>
 		</div>
 	</div>
