@@ -78,6 +78,42 @@ function needsStatementSeparator(previousLine, currentLine) {
 	return true;
 }
 
+function updateNestingState(line, state) {
+	let inSingle = false;
+	let inDouble = false;
+	let parenDepth = state.parenDepth;
+	let bracketDepth = state.bracketDepth;
+
+	for (let i = 0; i < line.length; i++) {
+		const ch = line[i];
+		const escaped = line[i - 1] === "`";
+
+		if (!inSingle && ch === '"' && !escaped) {
+			inDouble = !inDouble;
+			continue;
+		}
+
+		if (!inDouble && ch === "'" && !escaped) {
+			inSingle = !inSingle;
+			continue;
+		}
+
+		if (inSingle || inDouble) continue;
+
+		if (ch === "(") {
+			parenDepth++;
+		} else if (ch === ")" && parenDepth > 0) {
+			parenDepth--;
+		} else if (ch === "[") {
+			bracketDepth++;
+		} else if (ch === "]" && bracketDepth > 0) {
+			bracketDepth--;
+		}
+	}
+
+	return { parenDepth, bracketDepth };
+}
+
 function minifyInlineWhitespace(line) {
 	let output = "";
 	let inSingle = false;
@@ -133,6 +169,7 @@ function formatMinifiedTokens(tokens) {
 		}
 
 		const needsNoLeadingSpace =
+			output.endsWith(";") ||
 			token === ";" ||
 			token.startsWith("}") ||
 			token.startsWith("]") ||
@@ -155,16 +192,23 @@ function minifyPowerShell(script) {
 	const lines = withoutBlockComments.split("\n");
 	const cleaned = [];
 	let previousLine = "";
+	let state = { parenDepth: 0, bracketDepth: 0 };
 
 	for (const rawLine of lines) {
 		const line = minifyInlineWhitespace(stripLineComment(rawLine).trim());
 		if (line.length === 0) continue;
 
-		if (needsStatementSeparator(previousLine, line)) {
+		const shouldInsertSeparator =
+			needsStatementSeparator(previousLine, line) &&
+			state.parenDepth === 0 &&
+			state.bracketDepth === 0;
+
+		if (shouldInsertSeparator) {
 			cleaned.push(";");
 		}
 		cleaned.push(line);
 		previousLine = line;
+		state = updateNestingState(line, state);
 	}
 
 	return formatMinifiedTokens(cleaned);
