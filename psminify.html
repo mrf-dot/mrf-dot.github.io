@@ -24,18 +24,18 @@
 		<h1>PowerShell Minifier</h1>
 		<div class="block">
 			<h2>Input Script</h2>
-			<textarea id="psInput" rows="14" cols="80" placeholder="Paste PowerShell script here..." spellcheck="false"></textarea>
+			<textarea id="psInput" class="textbox-center" rows="14" cols="80" placeholder="Paste PowerShell script here..." spellcheck="false"></textarea>
 			<button style="margin: 10px auto;" onclick="runMinify()">Minify + Build Batch Command</button>
 			<p id="status"></p>
 		</div>
 		<div class="block">
 			<h2>Minified Script (Single Line)</h2>
-			<textarea id="minifiedOutput" rows="6" cols="80" readonly spellcheck="false"></textarea>
+			<textarea id="minifiedOutput" class="textbox-center" rows="6" cols="80" readonly spellcheck="false"></textarea>
 			<button style="margin: 10px auto;" onclick="copy('minifiedOutput')">COPY</button>
 		</div>
 		<div class="block">
 			<h2>Batch Command</h2>
-			<textarea id="batchOutput" rows="6" cols="80" readonly spellcheck="false"></textarea>
+			<textarea id="batchOutput" class="textbox-center" rows="6" cols="80" readonly spellcheck="false"></textarea>
 			<button style="margin: 10px auto;" onclick="copy('batchOutput')">COPY</button>
 		</div>
 	</div>

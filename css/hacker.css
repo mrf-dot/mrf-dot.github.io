@@ -144,6 +144,21 @@ input {
 	width: 125px;
 }
 
+textarea {
+	background-color: lightgrey;
+	color: black;
+	font-size: 14pt;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.textbox-center {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
 select {
 	background-color: lightgrey;
 	color: black;
