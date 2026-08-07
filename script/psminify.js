@@ -78,6 +78,51 @@ function needsStatementSeparator(previousLine, currentLine) {
 	return true;
 }
 
+function minifyInlineWhitespace(line) {
+	let output = "";
+	let inSingle = false;
+	let inDouble = false;
+	let pendingSpace = false;
+
+	for (let i = 0; i < line.length; i++) {
+		const ch = line[i];
+		const prev = output[output.length - 1] || "";
+		const escaped = line[i - 1] === "`";
+
+		if (!inSingle && ch === '"' && !escaped) {
+			if (pendingSpace && output.length > 0 && !/[\(\[\{,;=]/.test(prev)) output += " ";
+			pendingSpace = false;
+			inDouble = !inDouble;
+			output += ch;
+			continue;
+		}
+
+		if (!inDouble && ch === "'" && !escaped) {
+			if (pendingSpace && output.length > 0 && !/[\(\[\{,;=]/.test(prev)) output += " ";
+			pendingSpace = false;
+			inSingle = !inSingle;
+			output += ch;
+			continue;
+		}
+
+		if (!inSingle && !inDouble && /\s/.test(ch)) {
+			pendingSpace = true;
+			continue;
+		}
+
+		const removeSpaceBefore = !inSingle && !inDouble && /[;,\)\]\}\{=]/.test(ch);
+		const removeSpaceAfter = !inSingle && !inDouble && /[\(\[\{,;=]/.test(prev);
+
+		if (pendingSpace && output.length > 0 && !removeSpaceBefore && !removeSpaceAfter) {
+			output += " ";
+		}
+		pendingSpace = false;
+		output += ch;
+	}
+
+	return output.trim();
+}
+
 function formatMinifiedTokens(tokens) {
 	let output = "";
 
@@ -112,7 +157,7 @@ function minifyPowerShell(script) {
 	let previousLine = "";
 
 	for (const rawLine of lines) {
-		const line = stripLineComment(rawLine).trim();
+		const line = minifyInlineWhitespace(stripLineComment(rawLine).trim());
 		if (line.length === 0) continue;
 
 		if (needsStatementSeparator(previousLine, line)) {
