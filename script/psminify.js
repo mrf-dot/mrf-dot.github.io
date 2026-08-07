@@ -80,9 +80,20 @@ function quoteForSingleQuotedPowerShellArg(text) {
 	return text.replace(/'/g, "''");
 }
 
-function setLineNumbers(textarea, lineNumbers) {
-	if (!textarea || !lineNumbers) return;
+function getElements() {
+	const input = document.getElementById("psInput");
+	const output = document.getElementById("batchOutput");
+	const asBatchCommand = document.getElementById("asBatchCommand");
+	const outputHeading = document.getElementById("outputHeading");
+	const inputLines = document.getElementById("psInputLines");
+	const outputLines = document.getElementById("batchOutputLines");
 
+	if (!input || !output || !asBatchCommand || !outputHeading || !inputLines || !outputLines) return null;
+
+	return { input, output, asBatchCommand, outputHeading, inputLines, outputLines };
+}
+
+function renderLineNumbers(textarea, lineNumbers) {
 	const lineCount = Math.max(1, textarea.value.split("\n").length);
 	const entries = [];
 	for (let i = 1; i <= lineCount; i++) entries.push(`<li>${i}</li>`);
@@ -91,13 +102,10 @@ function setLineNumbers(textarea, lineNumbers) {
 }
 
 function runMinify() {
-	const input = document.getElementById("psInput");
-	const output = document.getElementById("batchOutput");
-	const asBatchCommand = document.getElementById("asBatchCommand");
-	const outputHeading = document.getElementById("outputHeading");
-	const outputLines = document.getElementById("batchOutputLines");
-	if (!input || !output || !asBatchCommand || !outputHeading || !outputLines) return;
+	const els = getElements();
+	if (!els) return;
 
+	const { input, output, asBatchCommand, outputHeading, outputLines } = els;
 	const source = input.value || "";
 	const minified = minifyPowerShell(source);
 	const shouldUseBatch = asBatchCommand.checked;
@@ -106,7 +114,7 @@ function runMinify() {
 
 	if (!minified) {
 		output.value = "";
-		setLineNumbers(output, outputLines);
+		renderLineNumbers(output, outputLines);
 		return;
 	}
 
@@ -117,34 +125,49 @@ function runMinify() {
 		output.value = minified;
 	}
 
-	setLineNumbers(output, outputLines);
+	renderLineNumbers(output, outputLines);
+}
+
+function handlePsInput() {
+	const els = getElements();
+	if (!els) return;
+	renderLineNumbers(els.input, els.inputLines);
+	runMinify();
+}
+
+function handleToggleChange() {
+	runMinify();
+}
+
+function syncInputScroll() {
+	const els = getElements();
+	if (!els) return;
+	els.inputLines.scrollTop = els.input.scrollTop;
+}
+
+function syncOutputScroll() {
+	const els = getElements();
+	if (!els) return;
+	els.outputLines.scrollTop = els.output.scrollTop;
 }
 
 function initializePsMinify() {
-	const input = document.getElementById("psInput");
-	const output = document.getElementById("batchOutput");
-	const inputLines = document.getElementById("psInputLines");
-	const outputLines = document.getElementById("batchOutputLines");
-	const asBatchCommand = document.getElementById("asBatchCommand");
-	if (!input || !output || !inputLines || !outputLines || !asBatchCommand) return;
+	const els = getElements();
+	if (!els) return;
+	const { input, output, asBatchCommand, inputLines } = els;
 
-	input.addEventListener("input", () => {
-		setLineNumbers(input, inputLines);
-		runMinify();
-	});
+	input.addEventListener("input", handlePsInput);
+	input.addEventListener("scroll", syncInputScroll);
+	output.addEventListener("scroll", syncOutputScroll);
+	asBatchCommand.addEventListener("change", handleToggleChange);
 
-	input.addEventListener("scroll", () => {
-		inputLines.scrollTop = input.scrollTop;
-	});
-
-	output.addEventListener("scroll", () => {
-		outputLines.scrollTop = output.scrollTop;
-	});
-
-	asBatchCommand.addEventListener("change", runMinify);
-
-	setLineNumbers(input, inputLines);
+	renderLineNumbers(input, inputLines);
 	runMinify();
 }
+
+window.handlePsInput = handlePsInput;
+window.handleToggleChange = handleToggleChange;
+window.syncInputScroll = syncInputScroll;
+window.syncOutputScroll = syncOutputScroll;
 
 document.addEventListener("DOMContentLoaded", initializePsMinify);

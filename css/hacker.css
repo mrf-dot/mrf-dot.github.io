@@ -160,14 +160,12 @@ textarea {
 }
 
 .ps-layout {
-	display: flex;
-	flex-wrap: nowrap;
+	display: grid;
+	grid-template-columns: 1fr 1fr;
 	gap: 16px;
-	align-items: stretch;
 }
 
 .ps-pane {
-	flex: 1 1 0;
 	min-width: 0;
 }
 
@@ -196,6 +194,7 @@ textarea {
 	background-color: lightgrey;
 	width: 100%;
 	max-width: 100%;
+	min-height: 24em;
 }
 
 .line-numbers {
